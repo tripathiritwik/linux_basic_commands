@@ -1,0 +1,129 @@
+Important Basic Linux Command:
+
+1. Navigation Through file system:-
+     
+	  $ cd~/.ssh/                        // (~) represents home directory
+	  
+	  i.) to go level up use cd..
+	       
+		    $ cd../Desktop
+	  
+2.)  To create a file quickly in directory use 'touch' command
+     
+     $ touch java1.txt
+
+3.) To copy a file use 'cp' command
+
+     $ cp java1.txt  python1.txt 
+
+                         // left one is original file & right the copy to be created.
+
+4.) To rename the file use 'mv' command (move)
+
+     $ mv java1.txt  newone.txt
+
+5.) To delete file use 'rm' command
+
+    $ rm java1.txt
+
+   A.) to delete every thing in directory including directory itself use 'rm -rf' command
+
+    $ rm -rf ~/Documents
+
+6.) To see the file names in given directory use 'ls' command
+
+    $ ls ~/Documents
+
+   a.) to see more detail view of each file use 'ls -1 ' command
+   b.) To see hidden files  use " ls -la " command
+   
+7.) To write files to the standard output
+   
+    $ cat java1.txt                   //concatenate
+    
+    a.) To use cat to perform complex operation using piping use command 'grep'
+   
+         $ cat java1.txt | grep Thread
+
+     b.) To do for large file we use
+
+        $ cat /var/log/message | grep 'Java is oops language'	
+		
+      c.) To use over docker container , you can use grep to zero-in on only container you are interested in.
+
+        $ docker ps | grep java-container
+
+8.) To append the content of existing file use:
+
+    $ echo "java is oops language" >> java1.txt	
+
+9.) To find specific sub-directory inside directory use 'find'
+
+     $ find . -name java1 
+	 
+10.) To check permission on a given file use 	 
+	    
+		$ ls -1 <file name>
+      then, 
+            -rw-r--r--
+			
+11.) To change permission on file 
+
+    $chmod u=rwx, g=rx,o=r java1.txt
+	
+    a.) also digit represent permission:
+	    4 is “read”,
+        2 is “write”,
+        1 is “execute”
+        0 is “no permissions”
+		
+		Eg :   $ chmod 766 java1.txt
+		
+		here 7- owner permission, 6-group permission, 6- permission for group
+		
+    Also, use
+	  $ chown <your_user>:<your_group> java1.txt
+		
+
+12.) To search back through your command history and re-run a previous command use 'reverse-i-search' command. by initiating "ctrl+ r" from keyboard.
+
+13.) To re-run a command to see for change logs use 'watch' & 'free'.
+        
+		$ watch -n 5 free -m
+
+      a.) to see latest change use "tail" command
+	  
+	     $ tail /var/log/message
+		                
+						// but it only prints 10 lines 
+        // to print more use 
+       
+            $ tail -f -n 100 /var/log/messages	
+			
+14.) to know what a command does 
+
+      $ man <command>
+
+15.)	  The 'df -h' command shows disk usage on your machine in a human readable format.
+
+16.)The 'top' command presents you with lots of information about all the different processes (essentially, applications) running on your machine.
+
+17.)The 'free' command allows you to see current memory usage on a machine.
+
+18.) to see processes on your system use
+
+      $ ps aux
+	  
+19.) to kill the offending process. use
+
+      $ pkill -9 Slack
+
+
+
+
+
+
+
+	
+	  
+	  
